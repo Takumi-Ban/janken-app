@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h2>たたかう</h2>
+        <div class="mb-3">
+            {% if msg %}{{ msg }}{% endif %}
+            <form method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label">正解の手の形を選択</label>
+                    <select name="cor_label" id="hand" class="form-select">
+                        <option value="0">グー</option>
+                        <option value="1">チョキ</option>
+                        <option value="2">パー</option>
+                    </select>
+                    <label class="form-label">検出結果の手の形を選択</label>
+                    <select name="res_label" id="hand" class="form-select">
+                        <option value="0">グー</option>
+                        <option value="1">チョキ</option>
+                        <option value="2">パー</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">実行</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
